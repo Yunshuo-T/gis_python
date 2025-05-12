@@ -1,15 +1,15 @@
-
-def folium_raster_display(file_path,tile_name = "OpenstreetMap",control_scale=False):
+def folium_raster_display(file_path,file_name,tile_name = "OpenstreetMap",control_scale=False):
     """
-    Display a raster file such as in GeoTIFFs files, using "folium.raster_layers.ImageOverlay" in Folium.
+    Display a raster file using "folium.raster_layers.ImageOverlay" in Folium.
     Args:
         file_path (str): Path to the raster file.
+        file_name(str): The name of the raster file.
         tile_name (str): Name of the tile layer to use. Default is "OpenstreetMap".
         control_scale (bool): Whether to show the scale control. Default is False.
     Returns:
         folium.Map: Folium map with the raster overlay.
     Depencies:
-        - folium 
+        - folium
         - rasterio
         - numpy
         - PIL (Pillow)
@@ -47,7 +47,7 @@ def folium_raster_display(file_path,tile_name = "OpenstreetMap",control_scale=Fa
             bounds=converted_bounds,
             mercator_project=True,
             overlay=True,
-            name = str(file_path),
+            name = str(file_name),
         ).add_to(m)
-
+        folium.LayerControl().add_to(m)
         return m

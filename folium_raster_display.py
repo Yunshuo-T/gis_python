@@ -1,7 +1,7 @@
 
 def folium_raster_display(file_path,tile_name = "OpenstreetMap",control_scale=False):
     """
-    Display a raster file using "folium.raster_layers.ImageOverlay" in Folium.
+    Display a raster file such as in GeoTIFFs files, using "folium.raster_layers.ImageOverlay" in Folium.
     Args:
         file_path (str): Path to the raster file.
         tile_name (str): Name of the tile layer to use. Default is "OpenstreetMap".

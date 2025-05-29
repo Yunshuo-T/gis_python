@@ -13,6 +13,12 @@ def zonal_stat(rp,vp,merge=False,stats_funcs=None):
                 Optional mapping of stat name to function, e.g., {'mean': np.mean, 'sum': np.sum}. 
     Returns:
         The vector's GeoDataFrame with stats merged or DataFrame of stats
+    Depencies:
+        rasterio
+        numpy
+        geopandas
+        pandas
+        rasterio.mask
     """
     import rasterio as rio
     import numpy as np
